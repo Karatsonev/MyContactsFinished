@@ -1,0 +1,45 @@
+package com.example.user.mycontacts.views.recyclerview;
+
+import android.content.Context;
+import android.graphics.PointF;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class LinearLayoutManagerWithScroller extends LinearLayoutManager {
+
+    public LinearLayoutManagerWithScroller(Context context) {
+        super( context );
+    }
+
+    public LinearLayoutManagerWithScroller(Context context, int orientation, boolean reverseLayout) {
+        super( context, orientation, reverseLayout );
+    }
+
+    @Override
+    public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int position) {
+        RecyclerView.SmoothScroller smoothScroller = new TopSnappedSmoothScroller(recyclerView.getContext());
+        smoothScroller.setTargetPosition( position );
+        startSmoothScroll( smoothScroller );
+    }
+
+    private class TopSnappedSmoothScroller extends LinearSmoothScroller {
+
+        public TopSnappedSmoothScroller(Context context) {
+            super( context );
+        }
+
+        @Override
+        protected int getVerticalSnapPreference() {
+            return SNAP_TO_START;
+        }
+
+        @Nullable
+        @Override
+        public PointF computeScrollVectorForPosition(int targetPosition){
+            return LinearLayoutManagerWithScroller.this.computeScrollVectorForPosition( targetPosition );
+        }
+    }
+}

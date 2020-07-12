@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".views.DetailsActivity"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:title="@string/details_contact"
+            app:titleTextColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:elevation="6dp"
+            android:outlineSpotShadowColor="@color/dark"
+            android:outlineAmbientShadowColor="@color/dark">
+
+            <ImageButton
+                android:id="@+id/ibEditContact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_edit"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:layout_marginRight="16dp"
+                android:contentDescription="@string/edit_contact" />
+
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivDetailsAvatar"
+            android:src="@drawable/iv_avatar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="16dp" />
+
+
+        <TextView
+            android:id="@+id/tvDetailsName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:text="@string/name"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:shadowColor="@color/grey"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+
+
+            <Button
+                android:id="@+id/ibCallFromDetails"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_phone_small"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                app:iconTint="@color/dark"
+                android:elevation="5dp"
+                android:shadowColor="@color/dark"
+                android:textColor="@color/dark"
+                app:iconSize="25dp"
+                android:text="@string/call"
+                android:backgroundTint="@color/primaryLight" />
+
+            <Button
+                android:id="@+id/ibSendEmailFromDetails"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_email_small"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:iconSize="25dp"
+                android:text="@string/mailAction"
+                app:iconTint="@color/dark"
+                android:elevation="5dp"
+                android:shadowColor="@color/dark"
+                android:textColor="@color/dark"
+                android:backgroundTint="@color/primaryLight" />
+
+            <Button
+                android:id="@+id/ibSendMessageFromDetails"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_message"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                app:iconSize="25dp"
+                android:elevation="5dp"
+                android:shadowColor="@color/dark"
+                android:text="@string/text"
+                app:iconTint="@color/dark"
+                android:textColor="@color/dark"
+                android:backgroundTint="@color/primaryLight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0c0"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ic_call"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_phone_small"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/call" />
+
+                <TextView
+                    android:id="@+id/tvDetailsPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/ic_call"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/phone_number"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tvDetailsNumberType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvDetailsPhoneNumber"
+                    android:layout_toEndOf="@+id/ic_call"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/number_type" />
+
+            </RelativeLayout>
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0c0"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ic_email"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_email_small"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/email" />
+
+                <TextView
+                    android:id="@+id/tvDetailsEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/ic_email"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/email2"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tvDetailsEmailType"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/tvDetailsEmail"
+                    android:layout_toEndOf="@id/ic_email"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/email_type" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0c0"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
+

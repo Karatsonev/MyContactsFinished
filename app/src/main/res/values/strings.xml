@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MyContacts</string>
+    <string name="image_button">imageButton</string>
+    <string name="my_contacts">My Contacts</string>
+    <string name="imageButtonSearch">search button</string>
+    <string name="details_contact">Details</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="call">Call</string>
+    <string name="message">Message</string>
+    <string name="text">Text</string>
+    <string name="mailAction">mail</string>
+    <string name="name">Name</string>
+    <string name="phone_number">phone number</string>
+    <string name="number_type">number type</string>
+    <string name="email2">email</string>
+    <string name="email_type">email type</string>
+    <string name="confirm">confirm</string>
+    <string name="avatar">avatar</string>
+
+    <string-array name="phone_types">
+        <item>Mobile</item>
+        <item>Home</item>
+        <item>Business</item>
+    </string-array>
+
+    <string-array name="email_types">
+        <item>Personal</item>
+        <item>Business</item>
+    </string-array>
+</resources>

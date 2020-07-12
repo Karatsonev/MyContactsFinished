@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".views.EditContactActivity"
+        android:orientation="vertical">
+
+        <!--    ACTION BAR-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="6dp"
+            android:outlineSpotShadowColor="@color/dark"
+            android:outlineAmbientShadowColor="@color/dark">
+
+            <TextView
+                android:id="@+id/editContactTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/edit_contact"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white" />
+
+            <ImageButton
+                android:id="@+id/ibAbort"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_abort_white"
+                android:background="@null"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp" />
+
+            <ImageButton
+                android:id="@+id/ibConfirm"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_confirm"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:contentDescription="@string/confirm" />
+
+
+        </RelativeLayout>
+
+
+         <!--    CONTACT IMAGE-->
+         <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/ivEditContactAvatar"
+             android:src="@drawable/iv_avatar"
+             android:layout_width="200dp"
+             android:layout_height="200dp"
+             android:layout_gravity="center_horizontal"
+             android:layout_marginTop="30dp"
+             android:layout_marginBottom="30dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <!--    NAME-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_person"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="12dp"
+                        android:contentDescription="@string/avatar" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name"
+                        android:theme="@style/Widget.Design.TextInputLayout"
+                        app:boxBackgroundColor="@android:color/transparent"
+                        android:background="@android:color/transparent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/etName"
+                            android:inputType="textCapWords"
+                            android:maxLength="20"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="20" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!--    PHONE-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_phone_small"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="12dp" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinnerPhoneType"
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phoneNumber"
+                        app:boxBackgroundColor="@android:color/transparent"
+                        android:background="@android:color/transparent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/etPhoneNumber"
+                            android:inputType="phone" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <!--    EMAIL-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_email_small"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="12dp" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinnerEmailType"
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        app:boxBackgroundColor="@android:color/transparent"
+                        android:background="@android:color/transparent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/etEmail"
+                            android:inputType="textEmailAddress"
+                            android:textColorHint="#dddd"
+                            app:rippleColor="@color/colorPrimary"
+                            app:endIconTint="@color/colorPrimaryDark" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
